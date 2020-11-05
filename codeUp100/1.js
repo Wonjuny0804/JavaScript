@@ -4,5 +4,4 @@
 입력: 없음
 출력: Hello
  */
-
  console.log('Hello');
