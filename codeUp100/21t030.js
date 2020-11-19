@@ -41,4 +41,61 @@ console.log(sentense);
 출력: 첫 번째 줄에 정수 부분을, 두 번째 줄에 실수 부분을 출력한다.
 
 */
-let numbe
+const [front, back] = prompt().split(".");
+console.log(front+"\n"+back);
+
+//24번 단어 1개 입력받아 나누어 출력하기(설명)
+/*
+단어를 1개 입력받는다.
+
+입력받은 단어(영어)의 각 문자를
+
+한줄에 한 문자씩 분리해 출력한다.
+
+입력
+단어(영어) 하나를 입력받는다.
+(단, 단어의 길이는 20자 이하이다.)
+
+출력
+단어의 문자(영어)를 하나씩 나누어 한 줄에 한 개씩
+' '로 묶어서 출력한다.
+Boy 가 입력되면 
+'B'
+'o'
+'y'
+가 출력된다..
+*/
+const letter = prompt();
+for (let i = 0; i < letter.length; i++ )
+{
+  console.log("'"+letter[i]+"'");
+}
+
+// 25번 [기초-입출력] 정수 1개 입력받아 나누어 출력하기(설명)
+/*
+입력 예시   
+75254
+
+출력 예시
+[70000]
+[5000]
+[200]
+[50]
+[4]
+ */
+let number = Number(prompt());
+let result = 0;
+let i = 1; // 1에서 시작해야함
+result_list = [];
+while (number > 0){
+   result = number % (10**i);
+   number -= result;
+   result_list.push(result);
+   i++;
+}
+console.log(result_list)
+
+for (let j = result_list; j > 0; j--)
+{
+  console.log(result_list[j-1]);
+}
