@@ -22,7 +22,7 @@ scanf("%s", data);
 를 실행하면, data[51] 에 한 단어가 저장된다.
 
 */
-let a = String((prompt());
+let a = String((prompt()));
 console.log(a);
 
 // 22번 문장 1개 입력받아 그대로 출력하기(설명)
@@ -30,7 +30,8 @@ console.log(a);
 입력: Programming is very fun!!
 출력: Promgramming is very fun!!
 */
-let sentense = String((prompt());
+
+let sentense = String((prompt()));
 console.log(sentense);
 
 //23번 실수 1개 입력받아 부분별로 출력하기(설명)
@@ -98,4 +99,48 @@ console.log(result_list)
 for (let j = result_list; j > 0; j--)
 {
   console.log(result_list[j-1]);
+}
+// 26번
+/*
+시 분 초가
+시:분:초 형식으로 입력된다.
+출력: 분만 출력한다.
+*/
+const [hh,mm,ss] = prompt().split(":");
+console.log(mm);
+
+//27번
+// 입력: 2014.07.15
+// 출력: 15-07-2014
+
+
+var changeFormat = function (date){
+  const [yy, mm, dd] = date.split(".");
+  console.log(`${dd}-${mm}-${yy}`);
+};
+today = prompt();
+changeFormat(today);
+
+//28번
+// 정수 1개를 입력받아 그대로 출력하기2
+// 2147483648
+// 출력: 2147483648
+
+var longInt = function (longint) {
+  var longint = number(longint)
+  console.log(longint);
+}
+// 29번 실수 1개 입력받아 그대로 출력2
+/*
+3.14159265359
+
+*/
+var longFloat = function (longfloat) {
+  var longfloat = parseFloat(longfloat);
+  console.log(longfloat);
+}
+// 30번
+var longFloat = function (longfloat) {
+  var longfloat = parseFloat(longfloat);
+  console.log(longfloat);
 }
