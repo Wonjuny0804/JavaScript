@@ -11,3 +11,13 @@ console.log(octVal);
 intVal = Number(prompt());
 hexVal = intVal.toString(16);
 console.log(hexVal);
+
+// 33번 10진 정수 입력받아 16진수로 출력하기2(설명)
+/*
+입력:255
+출력:FF
+*/
+intVal = Number(prompt());
+hexVal = intVal.toString(16);
+hexVal += '';
+console.log(hexVal.toUpperCase());
