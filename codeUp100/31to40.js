@@ -25,3 +25,7 @@ console.log(hexVal.toUpperCase());
 // 34번 8진 정수 1개 입력받아 10진수로 출력하기
 let value = Number(prompt());
 console.log(`${parseInt(value,8)}`);
+
+// 35번 16진 정수 1개 입력받아 8진수로 출력하기
+hexVal = Number(prompt()).toString(16);
+console.log(`${parseInt(hexVal,8)}`);
