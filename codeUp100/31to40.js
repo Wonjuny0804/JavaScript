@@ -29,3 +29,7 @@ console.log(`${parseInt(value,8)}`);
 // 35번 16진 정수 1개 입력받아 8진수로 출력하기
 hexVal = Number(prompt()).toString(16);
 console.log(`${parseInt(hexVal,8)}`);
+
+// 36번 영문자 1개 입력받아 10진수로 출력하기
+// 입력: 영문자 1개가 입력된다. 
+// 출력: 아스키코드 값을 10진수로 출력한다.
