@@ -69,3 +69,7 @@ var checkIfExist = function(arr) {
 };
 arr = [10,2,5,3];
 console.log(checkIfExist(arr));
+/*
+위 처럼 적어서 최종 코드가 완성되었다. 
+로직을 보면 m을 정하고 m의 2배해준 값을 다른 인덱스값들과 비교해준다. 
+*/
