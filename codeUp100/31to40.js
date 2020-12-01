@@ -37,3 +37,19 @@ console.log(`${parseInt(hexVal,8)}`);
 // for this there are three methods
 letter = prompt();
 console.log(`${letter.charCodeAt(0)}`);
+
+// 37번 정수 입력받아 아스키 문자로 출력하기
+number = Number(prompt());
+console.log(`${String.fromCharCode(number)}`);
+
+// 38번 정수 입력받아 합 출력하기
+const [first, second] = Number(prompt().split(' '));
+console.log( first + second );
+
+//39번 정수 2개 입력받아 합 출력하기2
+const [first, second] = Number(prompt().split(' '));
+console.log( first + second );
+
+// 40번 정수1개 입력받아 부호 바꿔 출력하기
+const num = Number(prompt());
+console.log(`${-num}`);
