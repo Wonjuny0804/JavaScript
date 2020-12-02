@@ -37,3 +37,14 @@ var moveZeroes = function(nums) {
   return result;
 };
 console.log(moveZeroes([0,1,0,3,12]));
+// third try..
+var moveZeroes = function (nums) {
+  var idx = 0;
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      nums[idx] = nums[i];
+      nums[i] = idx === i ? nums[i] : 0;
+      idx++;
+    }
+  }
+};
