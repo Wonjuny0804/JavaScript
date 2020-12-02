@@ -22,6 +22,7 @@ var moveZeroes = function(nums) {
     }
 };
 */
+// second try... works but uses another array.. so not very good...
 var moveZeroes = function(nums) {
   let result = [];
   let count = 0;
