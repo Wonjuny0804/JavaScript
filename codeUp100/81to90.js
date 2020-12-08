@@ -11,8 +11,22 @@
 */
 const nestingFor = function (num1, num2) {
   for (let i = 1; i < num1+1 ; i++) {
-    for (let j = j < num2+1; j++){
+    for (let j = j ; num2+1; j++) {
       console.log(i, j);
     }
   }
 };
+// 82번 16진수 구구단
+/*
+16진수로 한 자리 수가 입력된다.
+단, A ~ F 까지만 입력된다.
+입력된 16진수에 1~F까지 순서대로 곱한, 16진수 구구단을 줄을 바꿔 출력한다.
+계산 결과도 16진수로 출력해야 한다.
+*/
+const hexMulTable = function (hexnum) {
+   hexnum = hexnum.toString(16);
+   for (let i = 1 ; i < 16; i++) {
+    console.log(`${hexnum}*${i.toString(16)}=${(parseInt(hexnum, 16)*i).toString(16)}`);
+   }
+};
+hexMulTable('B');
