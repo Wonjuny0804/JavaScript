@@ -10,12 +10,13 @@
 첫 번째 수는 n, 두 번째 수는 m으로 고정해 출력하도록 한다.
 */
 const nestingFor = function (num1, num2) {
-  for (let i = 1; i < num1+1 ; i++) {
-    for (let j = j ; num2+1; j++) {
+  for (let i = 1; i < num1 + 1; i++) {
+    for (let j = i; num2 + 1; j++) {
       console.log(i, j);
     }
   }
 };
+nestingFor();
 // 82번 16진수 구구단
 /*
 16진수로 한 자리 수가 입력된다.
@@ -24,9 +25,27 @@ const nestingFor = function (num1, num2) {
 계산 결과도 16진수로 출력해야 한다.
 */
 const hexMulTable = function (hexnum) {
-   hexnum = hexnum.toString(16);
-   for (let i = 1 ; i < 16; i++) {
-    console.log(`${hexnum}*${i.toString(16)}=${(parseInt(hexnum, 16)*i).toString(16)}`);
-   }
+  hexnum = +(hexnum.toString(16));
+  for (let i = 1; i < 16; i++) {
+    console.log(`${hexnum}*${i.toString(16)}=${(parseInt(hexnum, 16) * i).toString(16)}`);
+  }
 };
-hexMulTable('B');
+
+// 83번 3 6 9 게임의 왕이 되자!
+// 10 보다 작은 정수 1개가 입력된다.
+// (1 ~ 9)
+//  1 부터 그 수까지 순서대로 공백을 두고 수를 출력하는데,
+//  3 또는 6 또는 9인 경우 그 수 대신 영문 대문자 X 를 출력한다.
+const threeSixNine = function (num) {
+  let result = '';
+  for (let i = 1; i <= num; i++) {
+    const temp = i + '';
+    if ((temp.indexOf('3') !== -1) || (temp.indexOf('6') !== -1) || (temp.indexOf('9') !== -1)) {
+      result += 'X';
+    } else {
+      result += i;
+    }
+  }
+  return result;
+};
+console.log(threeSixNine(25));
