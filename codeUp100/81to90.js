@@ -139,3 +139,61 @@ const imageData = function (width, height, rgb) {
   return result.toFixed(2) + 'MB';
 };
 console.log(imageData(1024, 768, 24));
+
+// 87번 
+/*
+1, 2, 3 ... 을 순서대로 계속 더해나갈 때,
+그 합이 입력한 정수보다 작을 동안만 계속 더하는 프로그램을 작성해보자.
+
+*/
+const okThatIsEnough = function (num) {
+  let total = 0;
+  let start = 1;
+  while (total < num) {
+    total += start;
+    ++start;
+  }
+  return total;
+};
+console.log(okThatIsEnough(57));
+
+// 88번 3의 배수는 통과
+/*
+1부터 입력한 정수까지 1씩 증가시켜 출력하는 프로그램을 작성하되,
+3의 배수인 경우는 출력하지 않도록 만들어보자.
+*/
+
+const notThrees = function (num) {
+  let count = 1;
+  let result = '';
+  while (count <= num) {
+    if (!(count % 3)) count++;
+    else {
+      result += count + ' ';
+      count++;
+    }
+  }
+  return result;
+};
+console.log(notThrees(10));
+
+// 89번 수 나열하기1
+/*
+입력
+시작 값(a), 등차의 값(d), 몇 번째 수 인지를 의미하는 정수(n)가
+공백을 두고 입력된다.(모두 0 ~ 100)
+출력
+n번째 수를 출력한다.
+
+*/
+const arithmetic = function (start, d, n) {
+  return start + d * (n - 1);
+};
+console.log(arithmetic(1, 3, 5));
+
+// 90 번 수 나열하기2
+// 등비 수열
+const geometric = function (start, r, n) {
+  return start * (r ** (n - 1));
+};
+console.log(geometric(2, 3, 7));
