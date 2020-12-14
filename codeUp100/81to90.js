@@ -129,6 +129,13 @@ h는 48,000이하, b는 32이하(단, 8의배수), c는 5이하, s는 6,000이�
 const soundData = function (h, b, c, s) {
   const howMuch = h * b * c * s;
   const result = (howMuch / 8) / (1024 ** 2);
-  return result.toFixed(1);
+  return result.toFixed(1) + 'MB';
 };
 console.log(soundData(44100, 16, 2, 10));
+
+// 86번
+const imageData = function (width, height, rgb) {
+  const result = ((width * height * rgb) / 8) / (1024 ** 2);
+  return result.toFixed(2) + 'MB';
+};
+console.log(imageData(1024, 768, 24));
