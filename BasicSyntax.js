@@ -120,3 +120,5 @@ const dog = {
 console.log(dog);
 console.log(dog.name);
 console.log(dog.age);
+
+// class
