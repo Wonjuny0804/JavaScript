@@ -75,11 +75,10 @@ const go = function (location) {
   for (let i = 0; i < 18; i++) {
     result[i] = Array.from({ length: 19 }, () => 0);
   }
-  for (let j= 0; j < location.length; j++) {
-    for (let k = 0; k < location[j].length; k++) {
-      result[location[j][k]]
-    }
+  for (let j = 0; j < location.length; j++) {
+    result[location[j][0] - 1][location[j][1] - 1] = 1;
   }
   return result;
 };
-console.log(go());
+const a = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]];
+console.log(go(a));
