@@ -82,3 +82,25 @@ const go = function (location) {
 };
 const a = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]];
 console.log(go(a));
+
+// 97
+const go2 = function (...location) {
+  const result = [];
+  for (let i = 0; i < 18; i++) {
+    result[i] = Array.from({ length: 19 }, () => 0);
+  }
+  for (let j = 0; j < location.length; j++) {
+    for (let k = 0; k < location[j].length; k++) {
+      if (location[j][k] === 0) {
+        for (let a = 0; a < result.length; a++) {
+          result[location[j][k][a]] = 1;
+        }
+      }
+    }
+  }
+  return result;
+};
+const location = [[10, 10], [12, 12]];
+console.log(go2([10, 10], [12, 12]));
+
+// 98
