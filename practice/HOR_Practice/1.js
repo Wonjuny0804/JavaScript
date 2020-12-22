@@ -16,3 +16,11 @@ function render() {
 }
 
 console.log(render(todos));
+function render2() {
+  let html = '';
+
+  return todos
+  .map(todo => {
+    html += `<li id="${todo.id}"><label><input type="checkbox" ${todo.completed ? 'checked' : ''}>${todo.content}</label></li>`;
+  });
+}
