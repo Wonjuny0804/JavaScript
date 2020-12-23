@@ -13,3 +13,5 @@ function getValues(key) {
 console.log(getValues('id')); // [3, 2, 1]
 console.log(getValues('content')); // ['HTML', 'CSS', 'Javascript']
 console.log(getValues('completed')); // [false, true, false]
+
+const getValues2 = key => key.
