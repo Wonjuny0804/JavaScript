@@ -10,12 +10,15 @@ let todos = [
 //   });
 // }
 
-function toggleCompletedAll() {
-  todos.forEach((todo, index) => {
-    todos[index] = { ...todo, completed: true};
-  });
-}
+// function toggleCompletedAll() {
+//   todos.forEach((todo, index) => {
+//     todos[index] = { ...todo, completed: true};
+//   });
+// }
 
+function toggleCompletedAll() {
+  todos = todos.map(todo => ({ ...todo, completed: true }));
+}
 toggleCompletedAll();
 
 console.log(todos);
