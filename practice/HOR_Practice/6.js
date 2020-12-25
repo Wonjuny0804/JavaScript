@@ -12,10 +12,14 @@ let todos = [
 //   });
 // }
 
+// function toggleCompletedById(id) {
+//   todos.forEach((todo, index) => {
+//     if (todo.id === id) todos[index] = ({ ...todo, completed: !todo.completed });
+//   });
+// }
+
 function toggleCompletedById(id) {
-  todos.forEach((todo, index) => {
-    if (todo.id === id) todos[index] = ({...todo, completed: !todo.completed });
-  });
+  todos = todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo);
 }
 
 toggleCompletedById(2);
