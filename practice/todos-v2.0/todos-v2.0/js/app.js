@@ -2,6 +2,7 @@
 let todos = [];
 const $todos = document.querySelector('.todos');
 const $inputTodo = document.querySelector('.input-todo');
+const $remove = document.querySelector('.remove-todo');
 
 const render = () => {
   $todos.innerHTML = '';
@@ -58,4 +59,13 @@ $inputTodo.onkeyup = e => {
   e.target.value = '';
 };
 
-$
+$todos.onchange = e => {
+  todos = todos.map(todo => todo.id === +e.target.parentNode.id  ? { ...todo, completed: !todo.completed } : todo);
+  render();
+};
+
+$todos.onclick = e => {
+  if (!e.target.classList.contains('remove-todo')) return;
+  todos = todos.filter(todo => todo.id !== +e.target.parentNode.id);
+  render();
+};
