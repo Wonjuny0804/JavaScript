@@ -1,0 +1,1 @@
+const findDuplicated = array => array.filter((item, index) => array.indexOf(item) !== index);
