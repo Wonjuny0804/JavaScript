@@ -5,6 +5,7 @@ let todos = [];
 const $todos = document.querySelector('.todos');
 const $inputTodo = document.querySelector('.input-todo');
 const $completeAll = document.getElementById('ck-complete-all');
+const $button = document.querySelector('.btn');
 
 const render = () => {
   $todos.innerHTML = '';
@@ -39,7 +40,7 @@ const render = () => {
     // <i class="remove-todo far fa-times-circle"></i>
     $todos.appendChild($li);
   });
-  
+
   if (todos.map(({ completed }) => completed).reduce((acc, complete) => acc && complete, true)) $completeAll.checked = true;
   if (todos.map(({ completed }) => completed).reduce((acc, complete) => !acc && !complete, false)) $completeAll.checked = false;
 };
@@ -83,6 +84,11 @@ $completeAll.onclick = e => {
   else todos = todos.map(todo => ({ ...todo, completed: false }));
 
   todos = e.target.checked ? todos.map(todo => ({ ...todo, completed: true })) : todos.map(todo => ({ ...todo, completed: false }));
+  render();
+};
+
+$button.onclick = e => {
+  todos = todos.filter(({ completed }) => !completed);
   render();
 };
 
