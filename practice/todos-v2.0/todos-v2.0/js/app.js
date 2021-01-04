@@ -1,8 +1,10 @@
 // Global state
 let todos = [];
+
+// get DOM elements
 const $todos = document.querySelector('.todos');
 const $inputTodo = document.querySelector('.input-todo');
-const $remove = document.querySelector('.remove-todo');
+const $completeAll = document.getElementById('ck-complete-all');
 
 const render = () => {
   $todos.innerHTML = '';
@@ -11,6 +13,8 @@ const render = () => {
     const $input = document.createElement('input');
     const $label = document.createElement('label');
     const $i = document.createElement('i');
+    const $complete = document.querySelector('.completed-todos');
+    const $active = document.querySelector('.active-todos');
     
     $li.setAttribute('id', id);
     $li.setAttribute('class', 'todo-item');
@@ -29,9 +33,15 @@ const render = () => {
     $li.appendChild($label);
     $li.append($i);
 
+    $complete.textContent = todos.filter(todo => todo.completed).length;
+    $active.textContent = todos.filter(todo => !todo.completed).length;
+
     // <i class="remove-todo far fa-times-circle"></i>
     $todos.appendChild($li);
   });
+  
+  if (todos.map(({ completed }) => completed).reduce((acc, complete) => acc && complete, true)) $completeAll.checked = true;
+  if (todos.map(({ completed }) => completed).reduce((acc, complete) => !acc && !complete, false)) $completeAll.checked = false;
 };
 const fetchTodos = () => {
   // TODO: 서버로부터 todos 데이터를 취득한다. 잠정처리..
@@ -50,8 +60,6 @@ const addTodo = content => {
   render();
 };
 
-document.addEventListener('DOMContentLoaded', fetchTodos);
-
 $inputTodo.onkeyup = e => {
   if (e.key !== 'Enter') return;
   const content = e.target.value;
@@ -60,7 +68,7 @@ $inputTodo.onkeyup = e => {
 };
 
 $todos.onchange = e => {
-  todos = todos.map(todo => todo.id === +e.target.parentNode.id  ? { ...todo, completed: !todo.completed } : todo);
+  todos = todos.map(todo => todo.id === +e.target.parentNode.id ? { ...todo, completed: !todo.completed } : todo);
   render();
 };
 
@@ -69,3 +77,13 @@ $todos.onclick = e => {
   todos = todos.filter(todo => todo.id !== +e.target.parentNode.id);
   render();
 };
+
+$completeAll.onclick = e => {
+  if (e.target.checked) todos = todos.map(todo => ({ ...todo, completed: true }));
+  else todos = todos.map(todo => ({ ...todo, completed: false }));
+
+  todos = e.target.checked ? todos.map(todo => ({ ...todo, completed: true })) : todos.map(todo => ({ ...todo, completed: false }));
+  render();
+};
+
+document.addEventListener('DOMContentLoaded', fetchTodos);
