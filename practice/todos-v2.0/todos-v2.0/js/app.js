@@ -6,6 +6,7 @@ const $todos = document.querySelector('.todos');
 const $inputTodo = document.querySelector('.input-todo');
 const $completeAll = document.getElementById('ck-complete-all');
 const $button = document.querySelector('.btn');
+const $completeTodo = document.querySelector('.checkbox');
 
 const render = () => {
   $todos.innerHTML = '';
@@ -36,6 +37,8 @@ const render = () => {
 
     $complete.textContent = todos.filter(todo => todo.completed).length;
     $active.textContent = todos.filter(todo => !todo.completed).length;
+
+    if (completed) $label.classList.add('done');
 
     // <i class="remove-todo far fa-times-circle"></i>
     $todos.appendChild($li);

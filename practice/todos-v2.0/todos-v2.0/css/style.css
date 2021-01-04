@@ -16,6 +16,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.done {
+  text-decoration: line-through;
+}
+
 .container {
   max-width: 750px;
   min-width: 450px;
@@ -201,7 +205,7 @@ footer {
 }
 
 .btn:hover {
-  color: #333;
+  color: rgb(156, 151, 151);
   background-color: #e6e6e6;
   border-color: #adadad;
 }
