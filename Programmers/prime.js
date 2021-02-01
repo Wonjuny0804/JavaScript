@@ -5,7 +5,7 @@ function solution(n) {
   let answer = 0;
   const numbers = [];
   for (let i = 2; i < n; i++) numbers.push(true);
-  for (let i = 2; i * i < n; i++) {
+  for (let i = 2; i * i <= n; i++) {
     if (numbers[i]) for (let j = i * i; j <= n; j += i) numbers[j] = false;
   }
   return numbers.filter(number => number);

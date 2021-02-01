@@ -8,3 +8,4 @@ const answer = str.map(ss => {
 }).join('');
 
 console.log(answer);
+console.log(12 / 3);

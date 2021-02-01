@@ -13,9 +13,6 @@ function solution(numbers, hand) {
           loc[1] = [i, index];
           return 'R';
         } else {
-          console.log('location:',[i, index], 'number:',number);
-          console.log(loc);
-          console.log(Math.abs(i - loc[0][0]) + Math.abs(index - loc[0][1]), Math.abs(i - loc[1][0]) + Math.abs(index - loc[1][1]));
           if ((Math.abs(i - loc[0][0]) + Math.abs(index - loc[0][1])) > (Math.abs(i - loc[1][0]) + Math.abs(index - loc[1][1]))) {
             loc[1] = [i, index];
             return 'R';

@@ -7,16 +7,26 @@ const stages = [2, 1, 2, 6, 2, 4, 3, 3];
 stages.sort((a, b) => a - b);
 console.log(stages);
 
-const current = [];
-for (let i = 0; i < N; i++) current.push(0);
-console.log(current);
-const stopped = stages.filter(stage => stage <= 5);
-for (let i = 0; i < stopped.length; i++) current[stopped[i] - 1]++;
-console.log(stopped, current);
-let cleared = stages.length;
-const failures = current.map(c => {
-  const value = c / cleared;
-  cleared -= c;
-  return value;
-});
-console.log(failures);
+const stuck = {};
+const failure = {};
+for (let i = 0; i < N; i++) {
+  stuck[i + 1] = 0;
+  failure[i + 1] = 0;
+}
+stuck['allCleared'] = 0;
+console.log(stuck);
+
+for (let i = 0; i < stages.length; i++) {
+  if (stuck.hasOwnProperty(stages[i])) stuck[stages[i]]++;
+  else stuck.allCleared += 1;
+}
+console.log(stuck);
+
+// for (let i = 0; i < stuck.length; i++) {
+//   let total = 0;
+//   for (let j = i; j < stuck.length; j++) {
+//     total += stuck[`${i}`]
+//   }
+// }
+console.log(Object.keys(stuck));
+console.log(Object.keys(stuck).map(id => stuck[id]));
