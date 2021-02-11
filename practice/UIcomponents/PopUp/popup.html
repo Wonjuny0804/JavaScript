@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Popup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <script defer src="./app.js"></script>
+    <style>
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Open Sans';
+        font-weight: 300;
+      }
+      .title {
+        color: #db5b33;
+        font-weight: 300;
+        text-align: center;
+      }
+      .popup-bg {
+        background-color: rgba(0, 0, 0, 0.4);
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      .popup {
+        margin: auto;
+        position:relative;
+        margin-top: 20%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 520px;
+        height: 200px;
+        background-color: rgb(255, 255, 172);
+        border-radius: 5px;
+        display: none;
+      }
+      .popup-header {
+        margin: 0;
+      }
+      .popup-close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        text-decoration: none;
+        border-style: none;
+        background-color: transparent;
+      }
+      .popup-close:hover, .popup-close:focus {
+        cursor: pointer;
+      }
+      .popup-message {
+        width: 480px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 15px;
+      }
+      /* 팝업을 위한 CSS */
+    </style>
+  </head>
+  <body>  
+    <h1 class="title">Popup</h1>
+
+    <!-- 팝업을 위한 HTML -->
+    <button class="popup-btn">toggle pop</button>
+    <div class="popup-bg">
+      <div class="popup">
+        <h2 class="popup-header">Fuck you all~!</h2>
+        <button class="popup-close" button="button">×</button>
+        <p class="popup-message">
+          So there is something that I wanted to say y'all because I have been thinking
+          a lot about what I did in the past. When you are deciding wheather you are 
+          going to do something first ask God. If you realize that you don't want to do that
+          than it's all good. It worked. You stopped doing shit before it got worse. 
+        </p>
+        <div class="popup-footer">
+          <input class="popup-input" type="text"/>
+          <button type="submit" class="popup-ok">ok</button>
+          <button type="button" class="popup-cancel">cancel</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

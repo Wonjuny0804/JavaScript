@@ -51,34 +51,29 @@
     </div>
   </body>
   <script>
-    // DOM element
-    const $increase = document.querySelector('.increase');
-    const $decrease = document.querySelector('.decrease');
-    const $counter = document.querySelector('.counter');
-    
     const counter = (() => {
       // 전역 상태?
       let count = 0;
 
       const render = () => {
-        $counter.textContent = count;
+        document.querySelector('.counter').textContent = count;
       };
 
       return {
         increase() {
-          count++;
+          count += 1;
           render();
         },
         decrease() {
           if (count <= 0) return;
-          count--;
+          count -= 1;
           render();
         }
       };
     })();
 
-    $increase.addEventListener('click', counter.increase);
-    $decrease.addEventListener('click', counter.decrease);
+    document.querySelector('.increase').addEventListener('click', counter.increase);
+    document.querySelector('.decrease').addEventListener('click', counter.decrease);
 
   </script>
 </html>
